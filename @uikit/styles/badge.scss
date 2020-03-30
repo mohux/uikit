@@ -1,0 +1,9 @@
+@import "./variables";
+
+
+@each $key,$color in $badges{
+    .badge-#{$key}{
+        background-color: $color;
+        color: white;
+    }
+}

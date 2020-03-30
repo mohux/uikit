@@ -1,0 +1,32 @@
+@import "./variables";
+
+.uinput-group {
+  .uinpt {
+    border-color: $blue-200;
+    &:focus {
+      border-color: $blue-500;
+      box-shadow: 0 0 0 0.1rem transparentize($color: $blue-500, $amount: 0.7);
+    }
+
+    &.error-input {
+      border-color: $red-300;
+      &:focus {
+        border-color: $red-500;
+        box-shadow: 0 0 0 0.1rem transparentize($color: $red-500, $amount: 0.7);
+      }
+    }
+    &.valid-input {
+      border-color: $success;
+      &:focus {
+        border-color: $success;
+        box-shadow: 0 0 0 0.1rem transparentize($color: $success, $amount: 0.7);
+      }
+    }
+  }
+  .error-message {
+    color: $red-500;
+    font-size: 80%;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+}

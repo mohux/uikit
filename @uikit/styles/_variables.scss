@@ -1,0 +1,86 @@
+// blue
+$blue-500: #3cc3dc;
+$blue-400: #63cfe3;
+$blue-300: #8adbea;
+$blue-200: #b1e7f1;
+$blue-100: #d8f3f8;
+// orange
+$orange-500: #ff5a19;
+$orange-400: #ff7b47;
+$orange-300: #ff7b47;
+$orange-200: #ffbda3;
+$orange-100: #ffded1;
+// red
+$red-500: #b9286e;
+$red-400: #c7538b;
+$red-300: #d57ea8;
+$red-200: #e3a9c5;
+$red-100: #f1d4e2;
+// black
+$black-500: #1c1c1c;
+$black-400: #585757;
+$black-300: #969696;
+$black-200: #e4e4e4;
+$black-100: #f7f7f7;
+
+$success: #00b517;
+
+$colors: (
+  black-500: $black-500,
+  black-400: $black-400,
+  black-300: $black-300,
+  black-200: $black-200,
+  black-100: $black-100,
+  red-500: $red-500,
+  red-400: $red-400,
+  red-300: $red-300,
+  red-200: $red-200,
+  red-100: $red-100,
+  orange-500: $orange-500,
+  orange-400: $orange-400,
+  orange-300: $orange-300,
+  orange-200: $orange-200,
+  orange-100: $orange-100,
+  blue-500: $blue-500,
+  blue-400: $blue-400,
+  blue-300: $blue-300,
+  blue-200: $blue-200,
+  blue-100: $blue-100
+);
+
+$directions: left, right, top, bottom;
+
+$headings: (
+  1: 64px,
+  2: 48px,
+  3: 36px,
+  4: 24px,
+  5: 20px,
+  6: 15px
+);
+
+$buttons: (
+  blue: $blue-500,
+  red: $red-500,
+  orange: $orange-500,
+  black: $black-500
+);
+$badges: (
+  blue: $blue-500,
+  red: $red-500,
+  orange: $orange-500,
+  black: $black-500
+);
+$alerts: (
+  info: (#3CC3DC,#D8F3F8),
+  error: (#B9286E,#F1D4E2),
+  warning: (#FF5A19,#FFDED1),
+  success:(#23D782,#E5F7E7)
+);
+
+$avatars: (
+  sm: 24px,
+  md: 36px,
+  lg: 48px,
+  xl: 72px
+);

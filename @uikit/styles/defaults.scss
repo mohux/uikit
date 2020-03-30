@@ -1,0 +1,96 @@
+@import "./variables";
+
+
+@mixin borderize($name, $color) {
+  @each $direction in $directions {
+    [dir="ltr"] {
+      .border-#{$direction}-#{$name} {
+        border-#{$direction}: 1px solid $color;
+      }
+      .border-#{$direction}-2x-#{$name} {
+        border-#{$direction}: 2px solid $color;
+      }
+    }
+
+    // inversing RTL right and left
+    [dir="rtl"] {
+      .border-#{$direction}-#{$name} {
+        @if $direction == left {
+          border-right: 1px solid $color;
+        } @else if $direction == right {
+          border-left: 1px solid $color;
+        } @else {
+          border-#{$direction}: 1px solid $color;
+        }
+      }
+      .border-#{$direction}-2x-#{$name} {
+        @if ($direction == left) {
+          border-right: 1px solid $color;
+        } @else if(direction == right) {
+          border-left: 1px solid $color;
+        } @else {
+          border-#{$direction}: 1px solid $color;
+        }
+      }
+    }
+  }
+
+  .border-#{$name} {
+    border: 1px solid $color;
+  }
+  .border-2x-#{$name} {
+    border: 2px solid $color;
+  }
+
+  .border-dashed {
+    border-style: dashed;
+  }
+}
+
+@mixin colorize($name, $color) {
+  .#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+@mixin borderRadius($size) {
+  .border-radius-#{$size} {
+    border-radius: $size * 1px;
+  }
+  .border-radius-top-left-#{$size} {
+    border-top-left-radius: $size * 1px;
+    [dir="rtl"] & {
+      border-top-right-radius: $size * 1px;
+    }
+  }
+  .border-radius-bottom-left-#{$size} {
+    border-bottom-left-radius: $size * 1px;
+    [dir="rtl"] & {
+      border-bottom-right-radius: $size * 1px;
+    }
+  }
+  .border-radius-top-right-#{$size} {
+    border-top-right-radius: $size * 1px;
+    [dir="rtl"] & {
+      border-top-left-radius: $size * 1px;
+    }
+  }
+  .border-radius-bottom-right-#{$size} {
+    border-bottom-right-radius: $size * 1px;
+    [dir="rtl"] & {
+      border-bottom-left-radius: $size * 1px;
+    }
+  }
+}
+
+@each $key, $val in $colors {
+  @include colorize($key, $val);
+  @include borderize($key, $val);
+}
+
+@for $i from 0 through 10 {
+  @include borderRadius($i);
+}

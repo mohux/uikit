@@ -1,0 +1,13 @@
+@import "./variables";
+
+.avatar {
+  overflow: hidden;
+  border-radius: 50%;
+  object-fit: cover;
+}
+@each $key, $size in $avatars {
+  .avatar-#{$key} {
+    width: $size;
+    height: $size;
+  }
+}

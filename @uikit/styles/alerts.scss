@@ -1,0 +1,35 @@
+@import "./variables";
+
+@mixin alertMixin($key, $color) {
+  .uialert-#{$key} {
+    background-color: nth($list: $color, $n: 2);
+    border: 0.5px solid nth($list: $color, $n: 1);
+    color: nth($list: $color, $n: 1);
+    border-radius: 6px;
+    padding: 0.75rem 1.25rem;
+  }
+}
+.uialert-large {
+  img {
+    transform: scale(1.75);
+  }
+}
+.uialert{
+  display: flex;
+  align-items: center;
+  .uialert-content{
+    flex: 1;
+    padding: 0 .75rem;
+  }
+  .dismiss-uialert{
+    cursor: pointer;
+    transition: all 200ms linear;
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+}
+
+@each $key, $color in $alerts {
+  @include alertMixin($key, $color);
+}

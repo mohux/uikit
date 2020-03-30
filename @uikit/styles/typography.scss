@@ -1,0 +1,19 @@
+@import "./variables";
+
+@each $key, $val in $headings {
+  .heading-#{$key} {
+    font-size: $val;
+  }
+}
+
+$texts: (
+  large: 23px,
+  regular: 18px,
+  small: 13px
+);
+
+@each $key, $val in $texts {
+  .text-#{$key} {
+    font-size: $val;
+  }
+}
